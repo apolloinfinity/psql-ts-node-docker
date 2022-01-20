@@ -1,0 +1,18 @@
+{
+	"name": "psql-ts-node-docker",
+	"version": "1.0.0",
+	"description": "Build TODO's CRUD REST API with Typescript + Express.js + Sequelize + Sqlite3",
+	"main": "index.js",
+	"scripts": {
+		"dev": "ts-node-dev --respawn src/server.ts",
+		"build": "tsc ",
+		"start": "node dist/src/server.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"ts-node-dev": "^1.1.8",
+		"typescript": "^4.5.5"
+	}
+}

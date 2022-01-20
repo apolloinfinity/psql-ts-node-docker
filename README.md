@@ -11,6 +11,4 @@ Improve performance by using express-validator
 [ ] read todo with id 
 [ ] update todo 
 [ ] delete todo 
-# psql-ts-node-docker
-# psql-ts-node-docker
-# psql-ts-node-docker
+
