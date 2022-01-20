@@ -5,7 +5,7 @@ Improve performance by using express-validator
 - [x] Set up typescript for dev
 - [x] basic express server with typescript
 - [x] setup database
-- [ ] created model
+- [x] created model
 - [ ] create todo 
 - [ ] read todo with pagination 
 - [ ] read todo with id 
