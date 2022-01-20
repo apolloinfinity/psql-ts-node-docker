@@ -1,4 +1,9 @@
 import express, { Request, Response } from 'express';
+import db from './config/database.config';
+
+db.sync().then(() => {
+	console.log('connect to DB');
+});
 
 const app = express();
 const port = 9000;
