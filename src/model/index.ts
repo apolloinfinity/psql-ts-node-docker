@@ -7,12 +7,12 @@ interface ITodo {
 	completed: boolean;
 }
 
-class TodoInstance extends Model<ITodo> {}
+export class TodoInstance extends Model<ITodo> {}
 
 TodoInstance.init(
 	{
 		id: {
-			type: DataTypes.STRING,
+			type: DataTypes.UUIDV4,
 			primaryKey: true,
 			allowNull: false
 		},
