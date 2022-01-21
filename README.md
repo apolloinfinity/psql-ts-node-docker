@@ -11,3 +11,5 @@ Improve performance by using express-validator
 - [ ] read todo with id 
 - [ ] update todo 
 - [ ] delete todo 
+
+Learning how to use Typescript with Node/Express more effectively. 
