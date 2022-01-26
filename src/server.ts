@@ -31,18 +31,30 @@ app.post('/todo', TodoValidator.checkCreateTodo(), Middleware.handleValidationEr
 	}
 });
 
-app.get('/todo',TodoValidator.checkReadTodo(), Middleware.handleValidationError, async (req: Request, res: Response) => {
+app.get('/todo', TodoValidator.checkReadTodo(), Middleware.handleValidationError, async (req: Request, res: Response) => {
 	try {
 
 		const limit = req.query?.limit as number | undefined;
 		const offset = req.query?.offset as number | undefined;
 
-		
+
 		const records = await TodoInstance.findAll({ where: {}, limit, offset })
 
 		res.status(200).json(records)
 	} catch (error) {
-		return res.json({ msg: 'failed to read', route: '/todo' })
+		res.json({ msg: 'failed to read', route: '/todo' })
+	}
+});
+
+app.get('/todo/:id', TodoValidator.checkIdParam(),Middleware.handleValidationError, async (req: Request, res: Response) => {
+	try {
+		const { id } = req.params;
+
+		const record  = await TodoInstance.findOne({where: {id}})
+
+		res.status(200).json(record)
+	} catch (error) {
+		res.json({ msg: 'failed to read', route: '/todo/:id' })
 	}
 })
 
