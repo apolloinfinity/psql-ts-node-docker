@@ -7,7 +7,7 @@ Improve performance by using express-validator
 - [x] setup database
 - [x] created model
 - [x] create todo 
-- [ ] read todo with pagination 
+- [x] read todo with pagination 
 - [ ] read todo with id 
 - [ ] update todo 
 - [ ] delete todo 
