@@ -1,8 +1,7 @@
 import { Request, Response } from 'express';
 import { v4 as uuidv4 } from 'uuid';
 
-import TodoValidator from '../validator';
-import { TodoInstance } from '../model/index';
+import {TodoInstance}  from '../model';
 
 class TodoController {
     // Create Todo
@@ -13,11 +12,11 @@ class TodoController {
 			const record = await TodoInstance.create({ ...req.body, id });
 			return res
 				.status(201)
-				.json({ record, msg: 'Succesfuly created todo' });
+				.json({ record, msg: 'Successfuly created todo' });
 		} catch (error) {
 			return res.status(500).json({
 				msg: 'failed to create todo',
-				route: '/create'
+				route: '/todo'
 			});
 		}
 	}
@@ -34,9 +33,9 @@ class TodoController {
 				offset
 			});
 
-			res.status(200).json(records);
+			return res.status(200).json(records);
 		} catch (error) {
-			res.json({ msg: 'failed to read', route: '/todo' });
+			return res.status(500).json({ msg: 'failed to read', route: '/todo' });
 		}
 	}
 
@@ -46,9 +45,9 @@ class TodoController {
 
 			const record = await TodoInstance.findOne({ where: { id } });
 
-			res.status(200).json(record);
+			return res.status(200).json(record);
 		} catch (error) {
-			res.status(500).json({ msg: 'failed to read', route: '/todo/:id' });
+			return res.status(500).json({ msg: 'failed to read', route: '/todo/:id' });
 		}
 	}
 
@@ -66,9 +65,9 @@ class TodoController {
 				completed: !record.getDataValue('completed')
 			});
 
-			res.status(200).json({ record: updatedRecord });
+			return res.status(200).json({ record: updatedRecord });
 		} catch (error) {
-			res
+			return res
 				.status(500)
 				.json({ msg: 'failed to update', route: '/todo/:id' });
 		}
@@ -85,9 +84,9 @@ class TodoController {
 
 			const deletedRecord = await record.destroy();
 
-			res.status(200).json({ record: deletedRecord });
+			return res.status(200).json({ record: deletedRecord });
 		} catch (error) {
-			res
+			return res
 				.status(500)
 				.json({ msg: 'failed to delete', route: '/todo/:id' });
 		}
