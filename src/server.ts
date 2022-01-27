@@ -1,12 +1,8 @@
-import express, { NextFunction, Request, Response } from 'express';
+import express from 'express';
 
 import db from './config/database.config';
-import { TodoInstance } from './model/index';
-import TodoValidator from './validator';
-import Middleware from './middleware';
-import TodoController from './controllers';
 
-import todoRouter from './router';
+import todoRouter from './todo/router';
 
 db.sync().then(() => {
 	console.log('connect to DB');
