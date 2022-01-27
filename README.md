@@ -8,8 +8,8 @@ Improve performance by using express-validator
 - [x] created model
 - [x] create todo 
 - [x] read todo with pagination 
-- [ ] read todo with id 
-- [ ] update todo 
-- [ ] delete todo 
+- [x] read todo with id 
+- [x] update todo 
+- [x] delete todo 
 
 Learning how to use Typescript with Node/Express more effectively. 
