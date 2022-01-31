@@ -16,8 +16,9 @@ Learning how to use Typescript with Node/Express more effectively.
 - [x] Implementing Unit Test for TS/Node/Express REST API
 
 ### Setting up Docker with the API.
-- [ ] Move from sqlite3 to psql
+- [x] Move from sqlite3 to psql
 - [ ] running the server in docker
 - [ ] set up docker from production and dev
 
+In VSCODE, you can set up docker with the Docker extension installed and use ***CTRL+Shiftt+P*** for Windows or on ***CMD+Shift+P***  for Mac and type docker and select ***Add docker file to workspace***. Then on the ***Select Application Platform***, select ***Node.js*** -> ***package.json*** -> yes to ***Docker Compse File***.
 
