@@ -1,8 +1,8 @@
 import { Sequelize } from 'sequelize';
 
-const db = new Sequelize('app', '', '', {
-	storage: './database.sqlite',
-	dialect: 'sqlite',
+const db = new Sequelize('postgres', 'postgres', 'postgres', {
+	host: 'localhost',
+	dialect: 'postgres',
 	logging: false
 });
 
