@@ -12,7 +12,8 @@ export class TodoInstance extends Model<ITodo> {}
 TodoInstance.init(
 	{
 		id: {
-			type: DataTypes.UUIDV4,
+			type: DataTypes.UUID,
+			defaultValue: DataTypes.UUIDV4,
 			primaryKey: true,
 			allowNull: false
 		},
